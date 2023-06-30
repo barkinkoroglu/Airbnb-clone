@@ -77,7 +77,7 @@ function Modal({
                 >
                   <IoMdClose size={18} />
                 </button>
-                <div className="text-lg font-semibold">{title}</div>
+                <div className="text-xl font-bold">{title}</div>
               </div>
               {/*body*/}
               <div className="relative p-6 flex-auto">{body}</div>
