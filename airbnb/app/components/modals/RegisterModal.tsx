@@ -9,6 +9,7 @@ import { toast } from 'react-hot-toast';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import Modal from './Modal';
+import Heading from '../Heading';
 
 // Define the RegisterModal component
 function RegisterModal() {
@@ -57,6 +58,11 @@ function RegisterModal() {
     registerModal.onClose();
   }, [registerModal]);
 
+  const bodyContent = (
+    <div className="flex flex-col gap-4">
+      <Heading title="Welcome to Airbnb" subtitle="Create an account!" />
+    </div>
+  );
   return (
     // Render the Modal component with the appropriate props
     <Modal
@@ -66,6 +72,7 @@ function RegisterModal() {
       actionLabel="Continue" // Label for the submit button
       onClose={registerModal.onClose} // Function to close the modal
       onSubmit={handleSubmit(onSubmit)} // Function to handle form submission
+      body={bodyContent}
     />
   );
 }
